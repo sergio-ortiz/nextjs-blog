@@ -5,6 +5,6 @@ export default function handler(req, res) {
     client: req.headers["user-agent"],
     server: `${os.arch()} ${os.platform()} ${os.release()} ${os.hostname()} ${
       os.version
-    } ${os.userInfo().username}`,
+    }`,
   });
 }
