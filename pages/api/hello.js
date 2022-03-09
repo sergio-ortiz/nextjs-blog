@@ -1,6 +1,10 @@
+const os = require("os");
+
 export default function handler(req, res) {
   res.status(200).json({
     client: req.headers["user-agent"],
-    server: process.env["npm_config_user_agent"],
+    server: `${os.arch()} ${os.platform()} ${os.release()} ${os.hostname()} ${
+      os.version
+    } ${os.userInfo().username}`,
   });
 }
